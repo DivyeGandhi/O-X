@@ -2,14 +2,15 @@
   "name": "tic-tac-toe-multiplayer",
   "version": "1.0.0",
   "description": "Tic Tac Toe Multiplayer Game",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Server/server.js",
-    "start:prod": "set NODE_ENV=production&& node Server/server.js",
-    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix Client && npm run build --prefix Client"
+    "install:all": "npm install --legacy-peer-deps && cd Server && npm install --legacy-peer-deps && cd ../Client && npm install --legacy-peer-deps",
+    "start": "cd Server && npm run prod:run"
   },
-  "devDependencies": {
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.0.2"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0"
   }
 } 

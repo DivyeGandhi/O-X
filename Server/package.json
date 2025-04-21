@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "install:all": "npm install && cd ../Client && npm install",
+    "install:all": "npm install --legacy-peer-deps && cd ../Client && npm install --legacy-peer-deps",
     "dev:run": "nodemon server.js",
     "dev:build": "cd ../Client && npm run dev",
     "prod:build": "npm run install:all && cd ../Client && npm run build",
@@ -14,11 +14,15 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "socket.io": "^4.7.2",
     "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

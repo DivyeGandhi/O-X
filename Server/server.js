@@ -4,9 +4,14 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import cors from "cors";
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const rootDir = path.join(__dirname, '..');
 
 const app = express();
 const httpServer = createServer(app);
@@ -15,7 +20,7 @@ const httpServer = createServer(app);
 const corsOptions = {
   origin: process.env.NODE_ENV === "production" 
     ? false // In production, we don't need CORS as we serve the files directly
-    : ["http://localhost:5173"], // In development, allow Vite dev server
+    : [`http://localhost:${process.env.CLIENT_PORT || 5173}`], // In development, allow Vite dev server
   methods: ["GET", "POST"],
   credentials: true
 };
@@ -42,22 +47,22 @@ if (process.env.NODE_ENV === "production") {
             "style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
             "font-src 'self' data: https://fonts.gstatic.com; " +
             "img-src 'self' data: blob:; " +
-            "connect-src 'self' ws: wss: http://localhost:3000;"
+            "connect-src 'self' ws: wss: http://localhost:${process.env.PORT || 3000};"
         );
         next();
     });
 
     // Serve static files from the dist directory
-    app.use(express.static(path.join(__dirname, '..', 'Client', 'dist')));
-    
-    // Handle all non-API routes
+    app.use(express.static(path.join(rootDir, 'Client', 'dist')));
+
+    // Handle non-API routes by sending the index.html file
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '..', 'Client', 'dist', 'index.html'));
+        res.sendFile(path.join(rootDir, 'Client', 'dist', 'index.html'));
     });
 } else {
-    // In development, just handle API routes
+    // In development mode, just respond with API running message
     app.get('/', (req, res) => {
-        res.send("API is Running Successfully");
+        res.send('API is running in development mode');
     });
 }
 //--------------------------------------------------DEPLOYMENT CODE ENDS-------------------------------------------------------
@@ -393,9 +398,10 @@ setInterval(() => {
   }
 }, 300000); // Check every 5 minutes
 
+// Update the server listen port
 const PORT = process.env.PORT || 3000;
 httpServer.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-  console.log(`Mode: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`Serving static files from: ${path.join(__dirname, '..', 'Client', 'dist')}`);
+    console.log(`Server is running on port ${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV}`);
+    console.log(`Node Version: ${process.env.NODE_VERSION}`);
 });
