@@ -6,7 +6,7 @@
   "scripts": {
     "install:all": "npm install --legacy-peer-deps && cd Client && npm install --legacy-peer-deps && cd ../Server && npm install --legacy-peer-deps",
     "start": "cd Server && npm run prod:run",
-    "prod:build": "npm run install:all && cd Client && npm run build && cd ../Server && npm run prod:run"
+    "prod:build": "chmod +x build.sh && ./build.sh"
   },
   "keywords": [],
   "author": "",
