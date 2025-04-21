@@ -1,0 +1,387 @@
+.main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.playOnline {
+  font-weight: 700;
+  border: none;
+  background-color: #e4ca56;
+  font-size: 60px;
+  cursor: pointer;
+  margin-top: 40vh;
+  padding: 6px 10px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.water-background {
+  background-color: #4b495f;
+}
+
+.game-heading {
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.square-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.move-detection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+
+.finished-state {
+  font-size: 30px;
+  text-align: center;
+}
+
+.left,
+.right {
+  height: 30px;
+  width: 120px;
+  background-color: red;
+  border-bottom-left-radius: 50px;
+  background-color: #4b495f;
+  border-top-right-radius: 50px;
+  padding-top: 7px;
+  font-size: 18px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.waiting {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 44px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.current-move-cross {
+  background-color: #3fa7f0 !important;
+}
+
+.current-move-circle {
+  background-color: #dd7f9f !important;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.game-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.game-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.game-option-btn {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.game-option-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offline-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.online-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.player-names-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.player-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.player-inputs input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.start-game-btn {
+  padding: 0.5rem 1rem;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.start-game-btn:hover {
+  background: #27ae60;
+}
+
+.go-home-btn {
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.go-home-btn:hover {
+  background: #2980b9;
+}
+
+.online-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.online-menu input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.online-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.create-room-btn {
+  padding: 0.8rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.join-room {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.join-room input {
+  flex: 1;
+}
+
+.join-room-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.waiting-room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.copy-room-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 500px;
+  min-height: 400px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 1rem 0;
+  width: 300px;
+  height: 300px;
+}
+
+.move-detection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.move-detection .left,
+.move-detection .right {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.current-move-circle {
+  background: #3498db;
+  color: white;
+}
+
+.current-move-cross {
+  background: #e74c3c;
+  color: white;
+}
+
+.game-result {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.play-again-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.play-again-btn:hover {
+  background: #27ae60;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.square:hover {
+  background: #f0f0f0;
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  background: #f0f0f0;
+}
+
+.square.cross {
+  color: #e74c3c;
+}
+
+.square.circle {
+  color: #3498db;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "tic-tac-toe-multiplayer",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe Multiplayer Game",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon Server/server.js",
+    "start:prod": "set NODE_ENV=production&& node Server/server.js",
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix Client && npm run build --prefix Client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+} 
