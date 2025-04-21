@@ -3,14 +3,19 @@ node_modules/
 **/node_modules/
 /.pnp
 .pnp.js
+package-lock.json
+**/package-lock.json
 
 # Testing
 /coverage
+**/coverage/
 
 # Production
 /build
 /dist
 **/dist/
+.cache/
+**/.cache/
 
 # Misc
 .DS_Store
@@ -18,11 +23,16 @@ node_modules/
 .env.development.local
 .env.test.local
 .env.production.local
+.env
+.env.*
+!.env.example
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+logs/
+**/logs/
 
 # Editor directories and files
 .idea/
@@ -33,7 +43,15 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Environment variables
-.env
-.env.*
-!.env.example
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build scripts (temporary)
+build.sh
+build.ps1
