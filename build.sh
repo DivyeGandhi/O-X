@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Install dependencies
-echo "Installing root dependencies..."
+# Install server dependencies
+echo "Installing server dependencies..."
+cd Server
 npm install --legacy-peer-deps
 
-echo "Installing Client dependencies..."
-cd Client
-npm install --legacy-peer-deps
-
-echo "Building Client..."
+# Install and build client
+echo "Installing and building client..."
+cd ../Client
+npm install
 npm run build
 
-echo "Installing Server dependencies..."
+# Return to server directory
 cd ../Server
-npm install --legacy-peer-deps
 
-echo "Starting Server..."
-npm run prod:run 
+# Start the server
+echo "Starting server..."
+cross-env NODE_ENV=production node server.js 
