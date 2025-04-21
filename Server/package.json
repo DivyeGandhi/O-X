@@ -8,7 +8,7 @@
     "install:all": "npm install --legacy-peer-deps && cd ../Client && npm install --legacy-peer-deps",
     "dev:run": "nodemon server.js",
     "dev:build": "cd ../Client && npm run dev",
-    "prod:build": "npm run install:all && cd ../Client && npm run build",
+    "prod:build": "cd ../Client && npm run build && npm run prod:run",
     "prod:run": "cross-env NODE_ENV=production node server.js",
     "start": "cross-env NODE_ENV=production node server.js"
   },

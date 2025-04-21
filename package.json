@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "install:all": "npm install --legacy-peer-deps && cd Server && npm install --legacy-peer-deps && cd ../Client && npm install --legacy-peer-deps",
-    "start": "cd Server && npm run prod:run"
+    "start": "cd Server && npm run prod:run",
+    "prod:build": "npm run install:all && cd Server && npm run prod:build"
   },
   "keywords": [],
   "author": "",
