@@ -9,7 +9,8 @@
     "dev:run": "nodemon server.js",
     "dev:build": "cd ../Client && npm run dev",
     "prod:run": "cross-env NODE_ENV=production node server.js",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "cross-env NODE_ENV=production node server.js",
+    "postinstall": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "cors": "^2.8.5",
