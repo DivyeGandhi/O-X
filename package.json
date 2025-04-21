@@ -4,9 +4,9 @@
   "description": "Tic Tac Toe Multiplayer Game",
   "main": "index.js",
   "scripts": {
-    "install:all": "npm install --legacy-peer-deps && cd Server && npm install --legacy-peer-deps && cd ../Client && npm install --legacy-peer-deps",
+    "install:all": "npm install --legacy-peer-deps && cd Client && npm install --legacy-peer-deps && cd ../Server && npm install --legacy-peer-deps",
     "start": "cd Server && npm run prod:run",
-    "prod:build": "npm run install:all && cd Server && npm run prod:build"
+    "prod:build": "npm run install:all && cd Client && npm run build && cd ../Server && npm run prod:run"
   },
   "keywords": [],
   "author": "",
